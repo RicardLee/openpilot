@@ -178,6 +178,13 @@ def bridge(q):
 
   max_steer_angle = vehicle.get_physics_control().wheels[0].max_steer_angle
 
+
+
+  # add target object
+  for i in range(5):
+    spawn_point = spawn_points[i]
+    world.spawn_actor(vehicle_bp, spawn_point)
+
   # make tires less slippery
   # wheel_control = carla.WheelPhysicsControl(tire_friction=5)
   physics_control = vehicle.get_physics_control()
